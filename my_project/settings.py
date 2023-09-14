@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'my_app',
     'my_app_2',
     'hw_app',
+    'my_app_sem_2',
+    'HW_2',
 ]
 
 MIDDLEWARE = [
@@ -153,7 +155,7 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
-        'hw_app': {
+        'HW_2': {
             'handlers': ['console', 'file_2'],
             'level': 'DEBUG',
             'propagate': True,
