@@ -1,6 +1,10 @@
 from django.urls import path
-from . import views
+from .views import my_view, OrderProductsView, ProductsByDateView
 
 urlpatterns = [
-    path('user/', views.user, name='user'),
-     ]
+
+    path('', my_view, name='index'),
+    path('order_list/<int:pk>', OrderProductsView.as_view(), name='order_list'),
+    path('orders_by_year/<int:pk>/<int:year>', ProductsByDateView.as_view(), name='order_by_year'),
+]
+
