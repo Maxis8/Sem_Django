@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>{{ product.title }}</p>
+    <p>{{ product.description }}</p>
+    <a href="{% url 'up_product' product.pk %}">UPDATE PRODUCT</a>
+{% endblock %}
+

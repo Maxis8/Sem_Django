@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import TemplateView, DetailView, ListView, UpdateView
 from .models import User, Order, Product
-
+from . forms import UpProductForm
 
 def my_view(request):
     context = {"name": "Welcome!"}
@@ -31,4 +31,15 @@ class ProductsByDateView(DetailView):
 
         context['orders'] = orders
         return context
+
+
+class UpProductView(UpdateView):
+    model = Product
+    template_name = 'HW_2/up_product.html'
+    form_class = UpProductForm
+
+
+class ProductView(DetailView):
+    model = Product
+    template_name = 'HW_2/product_page.html'
 

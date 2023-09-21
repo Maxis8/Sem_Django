@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h3>UP PRODUCT</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit">Refresh</button>
+
+          <button> <a href="{% url 'product_page' product.pk %}"  class="btn btn-primary">Cancel</a></button>
+        </form>
+{% endblock %}
+

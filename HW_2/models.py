@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class User(models.Model):
@@ -22,6 +23,9 @@ class Product(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     objects = models.Manager()
+
+    def get_absolute_url(self):
+        return reverse('product_page', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.title
