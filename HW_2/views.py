@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, ListView, UpdateView
 from .models import User, Order, Product
-from . forms import UpProductForm
+from .forms import UpProductForm
+
 
 def my_view(request):
     context = {"name": "Welcome!"}
